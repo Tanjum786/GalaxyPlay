@@ -16,30 +16,31 @@ export const HamburgerMenu = () => {
             </NavLink>
           </li>
           <li className="hamburger-sidebar-list">
-            <NavLink to="/likevideo">
+            <NavLink to="/likevideo" className={({isActive})=>(isActive?"activeLink":"notactive")}>
               <i className="icon-hamburger-sidebar fa-solid fa-thumbs-up "></i>
               <span className="title-hamburger-sidebar">Liked</span>
             </NavLink>
           </li>
           <li className="hamburger-sidebar-list">
-            <NavLink to="/playlist">
+            <NavLink to="/playlist" className={({isActive})=>(isActive?"activeLink":"notactive")}>
               <i className="icon-hamburger-sidebar fa-solid fa-folder-plus"></i>
               <span className="title-hamburger-sidebar">playlist</span>
             </NavLink>
           </li>
           <li className="hamburger-sidebar-list">
-            <NavLink to="/wacthlater">
+            <NavLink to="/wacthlater" className={({isActive})=>(isActive?"activeLink":"notactive")} >
               <i className="icon-hamburger-sidebar fa-solid fa-clock"></i>
               <span className="title-hamburger-sidebar">WatchLater</span>
             </NavLink>
           </li>
           <li className="hamburger-sidebar-list">
-            <NavLink to="/history" >
+            <NavLink to="/history" className={({isActive})=>(isActive?"activeLink":"notactive")} >
               <i className="icon-hamburger-sidebar fa-solid fa-clock-rotate-left"></i>
               <span className="title-hamburger-sidebar">History</span>
             </NavLink>
           </li>
           {token && user ? (
+            
             <li className="hamburger-sidebar-list">
               <i className="icon-hamburger-sidebar fa-solid fa-circle-user"></i>
               <span className="title-hamburger-sidebar">{user.firstName}</span>
