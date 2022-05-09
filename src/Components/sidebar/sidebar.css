@@ -1,0 +1,19 @@
+
+.icon-sidebar{
+    color: var(--pureWhite-color);
+    font-size: 1.5rem;
+    padding-left: 3.5rem;
+}
+.title-sidebar{
+    padding: 1rem;
+    text-align: center;
+    color:var(--pureWhite-color);
+}
+.sidebar-container{
+    padding-top: 2rem;
+    width: 9rem;
+    background-color: var(--primary-balck-color);
+}
+.sidebar-list{
+    padding-top: 2rem;
+}
