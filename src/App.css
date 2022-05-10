@@ -1,0 +1,33 @@
+:root{
+    --primary-balck-color:rgb(33 37 45);
+    --secondary-red-color:rgb(250,50,53);
+    --body-balck-color:rgb(12 15 18);
+    --tool-bg-color:#ef4444;
+    --lightblack-color:#727272;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+
+@media screen and (max-width:768px) {
+    html{
+        font-size: 55%;
+    }
+    
+}
+
+@media screen and (max-width:425px) {
+    html{
+        font-size: 45%;
+    }
+    
+}
+
+@media screen and (max-width:320px) {
+    html{
+        font-size: 35%;
+    }
+    
+}

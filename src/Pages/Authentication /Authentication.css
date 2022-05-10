@@ -1,0 +1,106 @@
+.e_login_signup_container {
+    padding-top: 5rem;
+    justify-content: center;
+    font-size: 1.5rem;
+
+}
+
+.login_btn,
+.login_signup_name {
+    text-align: center;
+    border: none;
+}
+
+.alert_primary {
+    color: var(--pureWhite-color);
+    border-bottom: 1px solid var(--secondary-red-color);
+}
+
+.alert_primary:hover {
+    color: var(--pureWhite-color);
+    border-bottom: 3px solid var(--secondary-red-color);
+
+}
+
+.new_account_link {
+    position: absolute;
+    bottom: 0rem;
+    left: 0rem;
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+.login_signup_container {
+    position: relative;
+    padding: 2rem;
+    width: 40rem;
+    margin-bottom: 5rem;
+    padding-bottom: 4rem;
+    box-shadow: 2px 2px 4px 3px var(--component-color);
+}
+
+.login_signup_name {
+    font-family: var(--secondary-font);
+    font-size: 2.5rem;
+}
+
+.login_signup_container {
+    flex-direction: column;
+}
+
+.forget_password {
+    color: var(--pureWhite-color);
+    text-decoration: underline;
+    text-align: end;
+}
+
+.checkbox_section {
+    gap: 0.5rem;
+}
+
+.input_filed,
+.showpassword_container {
+    border-radius: 4px;
+    border: 2px solid var(--black-color);
+}
+
+.showpassword_container {
+    background-color: var(--pureWhite-color);
+}
+
+.password_filed {
+    border: none;
+    outline: none;
+}
+
+.btn_style {
+    font-size: 1.5rem;
+    width: 100%;
+}
+
+.eye_slash {
+    margin: 0.5rem;
+    cursor: pointer;
+}
+
+.showpassword_container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* signup */
+.signup_container {
+    width: 40rem;
+}
+
+.star_color {
+    color: var(--secondary-red-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 320px) {
+    .input_filed {
+        font-size: 1.5rem;
+    }
+}
