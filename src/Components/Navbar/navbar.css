@@ -94,6 +94,21 @@
     padding-bottom:0.5rem;
   }
 }
+.title-container{
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.play-icon{
+  margin: 0.5rem;
+  margin-top: 1rem;
+  font-size: 2rem;
+  width: 3rem;
+  height:2.5rem;
+  text-align: center;
+  color: var(--pureWhite-color);
+  border: 2px solid var(--secondary-red-color);
+  border-radius: 0.5rem;
+}
 
 @media screen and (max-width: 320px) {
   .hamburg-container {
