@@ -80,7 +80,7 @@ export const Login = () => {
                 <span>Forgot password ?</span>
               </Link>
               <button
-                className="login_btn btn_style"
+                className="login_btn btn_style guestLogin-btn"
                 onClick={guestLoginHandler}
               >
                 Guest Login
