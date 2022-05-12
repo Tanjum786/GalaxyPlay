@@ -1,56 +1,63 @@
-.video-image-container{
+.video-image-container {
     margin: 1.5rem;
-    width:30rem;
+    width: 30rem;
     border: 1px solid var(--pureWhite-color);
     position: relative;
 }
 
-.video-length{
-position: absolute;
-right: 0.5rem;
-top: 15rem;
-padding: 0rem;
-font-size: 1.5rem;
-background-color: var(--primary-balck-color);
-width: 4rem;
-text-align: center;
+.video-length {
+    position: absolute;
+    right: 0.5rem;
+    top: 15rem;
+    padding: 0rem;
+    font-size: 1.5rem;
+    background-color: var(--primary-balck-color);
+    width: 4rem;
+    text-align: center;
 }
-.footer_container{
+
+.footer_container {
     margin-left: 1rem;
     gap: 0.5rem;
 }
-.video-title{
-    padding: 0.5rem;
+
+.video-title {
     width: 23rem;
     font-size: 1.5rem;
     word-wrap: break-word;
 }
-.channel-container{
+
+.channel-container,
+.video-title,
+.icons-container {
     padding: 0.5rem;
 }
-.channel-name,.channel-views{
+
+.channel-name,
+.channel-views {
     padding: 0.1rem;
     color: var(--gray-color);
 }
-.threedots,.icons{
+
+.threedots,
+.icons {
     cursor: pointer;
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
-    
 }
-.threedots:hover,.icons:hover{
+
+.threedots:hover,
+.icons:hover {
     background-color: var(--boder-color);
     color: var(--primary-balck-color);
 }
-.icons-container{
+
+.icons-container {
     gap: 1rem;
-    padding: 0.5rem;
     justify-content: center;
     align-items: center;
     margin: 4rem -4rem;
     background-color: var(--primary-balck-color);
     border-radius: 1rem;
 }
-
-
