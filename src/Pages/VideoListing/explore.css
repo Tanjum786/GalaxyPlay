@@ -1,0 +1,9 @@
+.video-container{
+    width: 100%;
+}
+.vide-card-conatiner{
+    flex-wrap: wrap;    
+    justify-content: center;
+    gap: 2rem;
+    
+}

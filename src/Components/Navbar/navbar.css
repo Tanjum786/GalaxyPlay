@@ -1,21 +1,21 @@
-.main-conatiner {
-  position: relative;
-}
 .nav-bar {
   background-color: var(--primary-balck-color);
   height: 9rem;
+  width: 100%;
   box-shadow: 0px 0px 7px 2px #94a3b8;
   border-top: 3px solid var(--secondary-red-color);
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 2;
 }
+
 .hamburg-container {
   color: var(--secondary-red-color);
   cursor: pointer;
   padding-left: 1.5rem;
   padding-bottom: 1rem;
 }
+
 .header-container {
   justify-content: space-between;
   padding: 2rem;
@@ -29,17 +29,19 @@
 .span-color {
   color: var(--pureWhite-color);
 }
-.user-name{
-  color: var(--pureWhite-color);
 
+.user-name {
+  color: var(--pureWhite-color);
 }
-.profile-conatiner{
+
+.profile-conatiner {
   flex-direction: column;
   row-gap: 0.5rem;
-  color:var(--secondary-red-color);
+  color: var(--secondary-red-color);
   text-align: center;
   align-items: center;
 }
+
 .login_btn {
   background-color: var(--secondary-red-color);
   padding: 1rem;
@@ -52,6 +54,7 @@
 .login_btn:hover {
   background-color: var(--secondary-red-color);
 }
+
 .search {
   border: none;
   background-color: var(--pureWhite-color);
@@ -66,19 +69,39 @@
   border-radius: 1rem;
   font-size: 1.5rem;
 }
+
 .hamburg-title-container {
   gap: 2rem;
 }
+
 .search-icon {
   padding-right: 1rem;
   color: var(--secondary-red-color);
 }
 
+.title-container {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.play-icon {
+  margin: 0.5rem;
+  margin-top: 1rem;
+  font-size: 2rem;
+  width: 3rem;
+  height: 2.5rem;
+  text-align: center;
+  color: var(--pureWhite-color);
+  border: 2px solid var(--secondary-red-color);
+  border-radius: 0.5rem;
+}
+
 @media screen and (max-width: 768px) {
   .search input[type="text"] {
-    width: 40rem;
+    width: 20rem;
   }
 }
+
 @media screen and (max-width: 425px) {
   .search {
     display: none;
@@ -87,39 +110,26 @@
   .explore {
     display: none;
   }
+
   .hamburg-container {
     padding-bottom: 3rem;
   }
-  .user-icon{
-    padding-bottom:0.5rem;
+
+  .user-icon {
+    padding-bottom: 0.5rem;
   }
-}
-.title-container{
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-.play-icon{
-  margin: 0.5rem;
-  margin-top: 1rem;
-  font-size: 2rem;
-  width: 3rem;
-  height:2.5rem;
-  text-align: center;
-  color: var(--pureWhite-color);
-  border: 2px solid var(--secondary-red-color);
-  border-radius: 0.5rem;
 }
 
 @media screen and (max-width: 320px) {
   .hamburg-container {
     padding-bottom: 5rem;
   }
-  .profile-conatiner{
-        row-gap: 0rem;
 
+  .profile-conatiner {
+    row-gap: 0rem;
   }
-  .user-icon{
-    padding-bottom:2rem;
 
+  .user-icon {
+    padding-bottom: 0rem;
   }
 }

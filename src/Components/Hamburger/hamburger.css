@@ -2,10 +2,9 @@
     position: absolute;
     top: 90px;
     left: 0rem;
-    width: 25rem;
-    height: 49rem;
+    height: 100vh;
     list-style: none;
-    padding-top: 5rem;
+    padding-top: 3rem;
     background-color: var(--primary-balck-color);
 }
 
