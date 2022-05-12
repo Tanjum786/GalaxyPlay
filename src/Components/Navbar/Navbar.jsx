@@ -43,7 +43,6 @@ export const Navbar = () => {
     />
   );
   return (
-    <div className="main-conatiner">
       <nav className="nav-bar">
         <div className="header-container dis_flex">
           <div className="hamburg-title-container dis_flex">
@@ -58,7 +57,7 @@ export const Navbar = () => {
                 <h1 className="app-titel">
                   Galaxy<span className="span-color">Play</span>
                 </h1>
-                <i class="fa-solid fa-play play-icon"></i>
+                <i className="fa-solid fa-play play-icon"></i>
               </div>
             </NavLink>
           </div>
@@ -80,7 +79,7 @@ export const Navbar = () => {
             {token && user ? (
               <>
                 <div className="profile-conatiner dis_flex">
-                  <FaUserCircle size="30px" className="user-icon" />
+                  <FaUserCircle  className="user-icon" />
                   <span className="user-name"> {user.firstName}</span>
                 </div>
                 <div>
@@ -97,6 +96,5 @@ export const Navbar = () => {
           </div>
         </div>
       </nav>
-    </div>
   );
 };
