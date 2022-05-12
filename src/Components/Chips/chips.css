@@ -1,0 +1,28 @@
+.chips-container {
+    margin-left: 10rem;
+    border-bottom: 2px solid var(--pureWhite-color);
+    border-radius: 1rem;
+}
+
+.chips-list {
+    margin: 2rem;
+    margin-top: 2rem;
+    justify-content:space-evenly;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.chips-main-container {
+    margin-bottom: 2px solid var(--pureWhite-color);
+}
+
+.btn-singer-name {
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: var(--light-red-color);
+    border: none;
+    color: var(--primary-balck-color);
+}
+.btn-singer-name:hover{
+    background-color: var(--pureWhite-color);
+}
