@@ -99,6 +99,14 @@
     font-weight: bold;
 }
 
+.guestLogin-btn{
+    background-color: var(--pureWhite-color);
+    color: var(--black-color);
+}
+.guestLogin-btn:hover{
+    background-color: var(--pureWhite-color);
+}
+
 @media screen and (max-width: 320px) {
     .input_filed {
         font-size: 1.5rem;

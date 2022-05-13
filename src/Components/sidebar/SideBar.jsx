@@ -8,34 +8,34 @@ export const SideBar = () => {
   const { token, user } = userDetailes;
   return (
     <>
-      <aside>
+      <aside className="side-menu">
         <ul className="sidebar-container">
           <li className="sidebar-list">
-            <NavLink to="/">
+            <NavLink to="/" className={({isActive})=>(isActive?"active-menu":"notactive-menu")}>
               <i className="icon-sidebar fa-solid fa-compass"> </i>
               <p className="title-sidebar">Explore</p>
             </NavLink>
           </li>
           <li className="sidebar-list">
-            <NavLink to="/likevideo">
+            <NavLink to="/likevideo" className={({isActive})=>(isActive?"active-menu" :"notactive-menu")}>
               <i className="icon-sidebar fa-solid fa-thumbs-up "></i>{" "}
               <p className="title-sidebar">Liked</p>
             </NavLink>
           </li>
           <li className="sidebar-list">
-            <NavLink to="/playlist">
+            <NavLink to="/playlist" className={({isActive})=>(isActive?"active-menu":"notactive-menu")}>
               <i className="icon-sidebar fa-solid fa-folder-plus"></i>
               <p className="title-sidebar">Playlist</p>
             </NavLink>
           </li>
           <li className="sidebar-list">
-            <NavLink to="/wacthlater">
+            <NavLink to="/wacthlater" className={({isActive})=>(isActive?"active-menu":"notactive-menu")}>
               <i className="icon-sidebar fa-solid fa-clock"></i>
               <p className="title-sidebar">WatchLater</p>
             </NavLink>
           </li>
           <li className="sidebar-list">
-            <NavLink to="/history">
+            <NavLink to="/history" className={({isActive})=>isActive?"active-menu":"notactive-menu"}>
               <i className="icon-sidebar fa-solid fa-clock-rotate-left"></i>
               <p className="title-sidebar">History</p>
             </NavLink>
@@ -58,3 +58,4 @@ export const SideBar = () => {
     </>
   );
 };
+
