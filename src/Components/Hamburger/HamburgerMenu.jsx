@@ -1,9 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { useAuth } from "../../Hooks/context/auth-context/AuthContext";
+import { useAuth } from "../../context/auth-context/AuthContext";
 import "./hamburger.css";
 export const HamburgerMenu = () => {
-  const {userDetailes}=useAuth()
+  const {userDetailes}=useAuth();
   const {token,user}=userDetailes;
   return (
     <>
