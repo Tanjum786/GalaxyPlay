@@ -1,7 +1,7 @@
 import React from "react";
 import "./sidebar.css";
 import { NavLink } from "react-router-dom";
-import { useAuth } from "../../Hooks/context/auth-context/AuthContext";
+import { useAuth } from "../../context/auth-context/AuthContext";
 
 export const SideBar = () => {
   const { userDetailes } = useAuth();

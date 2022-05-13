@@ -5,9 +5,9 @@ import { HiMenu } from "react-icons/hi";
 import { useState } from "react";
 import { IoMdCloseCircle } from "react-icons/io";
 import { HamburgerMenu } from "../Hamburger/HamburgerMenu";
-import { useAuth } from "../../Hooks/context/auth-context/AuthContext";
 import { toast } from "react-toastify";
 import { FaUserCircle } from "react-icons/fa";
+import { useAuth } from "../../context/auth-context/AuthContext";
 
 export const Navbar = () => {
   const [open, setopen] = useState(false);

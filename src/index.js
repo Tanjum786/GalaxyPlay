@@ -4,8 +4,8 @@ import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
 import { BrowserRouter } from "react-router-dom";
-import { ShowpasswordProvider } from "./Hooks/context/showpassword-context/ShowpasswordContext";
-import { AuthProvider } from "./Hooks/context/auth-context/AuthContext";
+import { AuthProvider} from "./context/auth-context/AuthContext";
+import { ShowpasswordProvider } from "./context/showpassword-context/ShowpasswordContext";
 
 // Call make Server
 makeServer();

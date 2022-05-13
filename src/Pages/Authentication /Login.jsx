@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
-import { useAuth } from "../../Hooks/context/auth-context/AuthContext";
-import { usePassword } from "../../Hooks/context/showpassword-context/ShowpasswordContext";
 import "./Authentication.css";
 import { toast } from "react-toastify";
+import { usePassword } from "../../context/showpassword-context/ShowpasswordContext";
+import { useAuth } from "../../context/auth-context/AuthContext";
 
 export const Login = () => {
   const { showpassword, ShowpasswordFun } = usePassword();

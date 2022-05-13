@@ -44,15 +44,15 @@ export const VideoCard = ({
             className="threedots"
             onClick={() => setIconopen(!iconOpen)}
           />
-          <div className="icons-container dis_flex">
-            {iconOpen && (
-              <>
+          {iconOpen && (
+            <>
+              <div className="icons-container dis_flex">
                 <AiOutlineLike className="icons" />
                 <MdOutlineWatchLater className="icons" />
                 <RiPlayListFill className="icons" />
-              </>
-            )}
-          </div>
+              </div>
+            </>
+          )}
         </footer>
         <div></div>
       </section>
