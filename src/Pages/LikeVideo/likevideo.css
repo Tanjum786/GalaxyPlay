@@ -1,0 +1,27 @@
+.page-heading {
+  color: var(--light-red-color);
+  font-size: 3rem;
+}
+
+.likevideo-section {
+  width: 90%;
+  padding: 2rem;
+  margin-left: 10rem;
+  flex-direction: column;
+}
+
+.page-container {
+  justify-content: center;
+}
+
+.likedvideo-container {
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.page-subheading {
+  text-align: center;
+  font-size: 4rem;
+}
