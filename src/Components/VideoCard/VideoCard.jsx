@@ -7,10 +7,9 @@ import { RiPlayListFill } from "react-icons/ri";
 import { useState } from "react";
 import { useLikeVideoContext } from "../../context/Liked-context/Likevideocontext";
 import { useAuth } from "../../context/auth-context/AuthContext";
-import { addtoLike } from "../../ApiCalls/LikeVideoApi/addtoLike";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { deletelikeVideo } from "../../ApiCalls/LikeVideoApi/deletelikeVideo";
+import { addtoLike, deletelikeVideo } from "../../ApiCalls";
 
 export const VideoCard = ({
   _id,
