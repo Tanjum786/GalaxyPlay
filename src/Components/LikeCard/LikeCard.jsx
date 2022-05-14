@@ -7,7 +7,7 @@ import { useState } from "react";
 import "./LikeCard.css";
 import { useAuth } from "../../context/auth-context/AuthContext";
 import { useLikeVideoContext } from "../../context/Liked-context/Likevideocontext";
-import { deletelikeVideo } from "../../ApiCalls/LikeVideoApi/deletelikeVideo";
+import { deletelikeVideo } from "../../ApiCalls";
 export const LikeCard = ({
   title,
   videoLength,
