@@ -1,10 +1,16 @@
 import React from "react";
 import "./videocard.css";
 import { BsThreeDotsVertical } from "react-icons/bs";
-import { AiOutlineLike } from "react-icons/ai";
+import { AiOutlineLike, AiFillLike } from "react-icons/ai";
 import { MdOutlineWatchLater } from "react-icons/md";
 import { RiPlayListFill } from "react-icons/ri";
 import { useState } from "react";
+import { useLikeVideoContext } from "../../context/Liked-context/Likevideocontext";
+import { useAuth } from "../../context/auth-context/AuthContext";
+import { addtoLike } from "../../ApiCalls/LikeVideoApi/addtoLike";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { deletelikeVideo } from "../../ApiCalls/LikeVideoApi/deletelikeVideo";
 
 export const VideoCard = ({
   _id,
@@ -14,9 +20,30 @@ export const VideoCard = ({
   channelName,
   channelProfile,
   views,
-  video,
+  videos,
 }) => {
   const [iconOpen, setIconopen] = useState(false);
+  const { likeVideoState, dispatchLikeVideo } = useLikeVideoContext();
+  const { likes} = likeVideoState;
+  const {userDetailes}=useAuth();
+  const {token}=userDetailes;
+  const navigate=useNavigate()
+
+
+  const userLikedvideo=videos.find((item)=>item._id===_id)
+  const likeHandler=(()=>{
+    if (token) {
+      addtoLike(userLikedvideo,token,dispatchLikeVideo)
+      
+    }else{
+      navigate("/login")
+      toast.warning("Need Login to like this video")
+    }
+  })
+
+  const deleteHandler=(()=>{
+    deletelikeVideo(_id,token,dispatchLikeVideo)
+  })
   return (
     <>
       <section className="video-card-container">
@@ -39,20 +66,26 @@ export const VideoCard = ({
               </div>
             </div>
           </div>
-          <BsThreeDotsVertical
-            size="10px"
-            className="threedots"
-            onClick={() => setIconopen(!iconOpen)}
-          />
-          {iconOpen && (
-            <>
-              <div className="icons-container dis_flex">
-                <AiOutlineLike className="icons" />
-                <MdOutlineWatchLater className="icons" />
-                <RiPlayListFill className="icons" />
-              </div>
-            </>
-          )}
+          <div>
+            <BsThreeDotsVertical
+              size="10px"
+              className="threedots"
+              onClick={() => setIconopen(!iconOpen)}
+            />
+            {iconOpen && (
+              <>
+                <div className="icons-container dis_flex">
+                  {likes.some((item) => item._id === _id) ? (
+                     <AiFillLike className="icons" onClick={deleteHandler} />
+                  ) : (
+                    <AiOutlineLike className="icons" onClick={likeHandler} />
+                  )}
+                  <MdOutlineWatchLater className="icons" />
+                  <RiPlayListFill className="icons" />
+                </div>
+              </>
+            )}
+          </div>
         </footer>
         <div></div>
       </section>
