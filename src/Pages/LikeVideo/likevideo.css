@@ -1,17 +1,14 @@
 .page-heading {
   color: var(--light-red-color);
   font-size: 3rem;
+  text-align: center;
 }
 
 .likevideo-section {
-  width: 90%;
-  padding: 2rem;
+  width: 100%;
   margin-left: 10rem;
+  padding: 2rem;
   flex-direction: column;
-}
-
-.page-container {
-  justify-content: center;
 }
 
 .likedvideo-container {
@@ -21,7 +18,7 @@
   margin-top: 2rem;
 }
 
-.page-subheading {
+.page-subHeading {
   text-align: center;
   font-size: 4rem;
 }

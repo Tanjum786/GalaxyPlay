@@ -17,17 +17,18 @@ export const LikeVideo = () => {
   return (
     <main className="dis_flex">
       <SideBar />
+
       <section className="likevideo-section dis_flex">
-        <div className="page-container dis_flex">
+        <div className="page-container">
           <h1 className="page-heading">Liked Videos - {likes.length}</h1>
         </div>
         <div className="likedvideo-container dis_flex">
           {likes.length !== 0 ? (
-            likes.map((item) => {
-              return <LikeCard key={item._id} {...item} />;
+            likes.map((item)=>{
+           return <LikeCard key={item._id} {...item} />
             })
           ) : (
-            <h1 className="page-subheading">No liked videos yet </h1>
+            <h1 className="page-subHeading">No liked videos yet </h1>
           )}
         </div>
       </section>

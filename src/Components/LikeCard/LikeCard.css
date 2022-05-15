@@ -1,70 +1,70 @@
 .likevideo-img {
-    padding: 1rem;
-    width: 25rem;
-    position: relative;
+  padding: 1rem;
+  width: 25rem;
+  position: relative;
 }
 
 .like-image {
-    border: 1px solid var(--pureWhite-color);
-
+  border: 1px solid var(--pureWhite-color);
+}
+.title-container {
+  flex-direction: column;
 }
 
 .likevideocard-section {
-    border-radius: 1rem;
-    background-color: var(--primary-balck-color);
+  border-radius: 1rem;
+  background-color: var(--primary-balck-color);
 }
 
 .likevideo-title {
-    font-size: 1.6rem;
-    padding: 0;
-    margin-top: 3rem;
+  font-size: 2rem;
+  padding: 0;
+  margin-top: 3rem;
 }
 
-.threedots-container {
-    margin-top: 3rem;
-    margin-left: 1rem;
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    cursor: pointer;
+.icons-like {
+  margin-top: 3rem;
+  margin-left: 1rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  cursor: pointer;
 }
+.deleteIcon-container{
+display: flex;
 
+}
 .like-video-length {
-    position: absolute;
-    right: 2rem;
-    bottom: 1.5rem;
+  position: absolute;
+  right: 2rem;
+  bottom: 1.5rem;
+  font-size: 1rem;
+  background-color: var(--primary-balck-color);
+  width: 2rem;
+  text-align: center;
+}
+
+.icons-like:hover {
+  background-color: var(--boder-color);
+  color: var(--primary-balck-color);
+}
+
+@media screen and (max-width: 768px) {
+  .deleteIcon-container {
+    margin-left: 0rem;
+  }
+  .likevideo-title {
     font-size: 1rem;
-    background-color: var(--primary-balck-color);
-    width: 2rem;
-    text-align: center;
+  }
 }
-
-.threedots-container:hover {
-    background-color: var(--boder-color);
-    color: var(--primary-balck-color);
-}
-
-.liked-icons-container {
-    gap: 1rem;
-    background-color: var(--body-balck-color);
-    border-radius: 1rem;
-    padding: 1rem;
-    margin-top: 10rem;
-    margin-right: 6rem;
-    text-align: center;
-
-}
-
-@media screen and (max-width:768px) {
-    .threedots-container {
-        margin-left: 0rem;
-    }
-.likevideo-title{
+@media screen and (max-width: 425px) {
+  .likevideo-title {
     font-size: 1rem;
-}
-}
-@media screen and (max-width:425px) {
-.likevideo-title{
-    font-size: 1rem;
-}
+  }
+  .like-video-length{
+      bottom: 3rem;
+  }
+  .icons-like{
+      margin-top: 1rem;
+  }
 }
