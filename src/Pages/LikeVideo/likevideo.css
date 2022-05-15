@@ -4,14 +4,14 @@
   text-align: center;
 }
 
-.likevideo-section {
+.video-section {
   width: 100%;
   margin-left: 10rem;
   padding: 2rem;
   flex-direction: column;
 }
 
-.likedvideo-container {
+.video-container {
   flex-wrap: wrap;
   flex-direction: column;
   gap: 2rem;

@@ -20,7 +20,7 @@ export const Explore = () => {
     <>
       <main className="dis_flex">
         <SideBar />
-        <div className="video-container">
+        <div className="mainvideo-container">
           <Chips />
           <div className="vide-card-conatiner dis_flex">
             {videodata.map(

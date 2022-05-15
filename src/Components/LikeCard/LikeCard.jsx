@@ -23,13 +23,13 @@ export const LikeCard = ({
 
   return (
     <>
-      <section className="likevideocard-section dis_flex">
-        <div className="likevideo-img">
-          <img className="like-image" src={thumbnail} alt="likedvideo-image" />
-          <small className="like-video-length">{videoLength}</small>
+      <section className="video-card-section dis_flex">
+        <div className="video-img-div">
+          <img className="video-image" src={thumbnail} alt="likedvideo-image" />
+          <small className="video-card-length">{videoLength}</small>
         </div>
         <div className="dis_flex title-container">
-          <p className="likevideo-title">{title}</p>
+          <p className="video-card-title">{title}</p>
           <div className="channel-container">
             <p className="channel-name"> {channelName}</p>
           </div>
