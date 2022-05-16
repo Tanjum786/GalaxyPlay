@@ -1,10 +1,8 @@
 import React from "react";
 import "./likevideo.css";
-import { SideBar } from "../../Components";
-import { LikeCard } from "../../Components/LikeCard/LikeCard";
-import { useAuth } from "../../context/auth-context/AuthContext";
-import { useLikeVideoContext } from "../../context/Liked-context/Likevideocontext";
+import { LikeCard, SideBar } from "../../Components";
 import { getlikevideo } from "../../ApiCalls";
+import { useAuth, useLikeVideoContext } from "../../context";
 
 export const LikeVideo = () => {
   const { userDetailes } = useAuth();

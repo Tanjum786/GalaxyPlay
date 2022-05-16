@@ -1,15 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import "./videocard.css";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { AiOutlineLike, AiFillLike } from "react-icons/ai";
-import { MdOutlineWatchLater } from "react-icons/md";
+import { MdOutlineWatchLater, MdWatchLater } from "react-icons/md";
 import { RiPlayListFill } from "react-icons/ri";
-import { useState } from "react";
-import { useLikeVideoContext } from "../../context/Liked-context/Likevideocontext";
-import { useAuth } from "../../context/auth-context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { addtoLike, deletelikeVideo } from "../../ApiCalls";
+import { addtoLike, deletelikeVideo, deleteWatchlater } from "../../ApiCalls";
+import { useAuth, useLikeVideoContext, usewatchlater } from "../../context";
+import { addTowatchlater } from "../../ApiCalls/WatchlaterApi/addTowatchlaterApi";
 
 export const VideoCard = ({
   _id,
@@ -23,29 +22,44 @@ export const VideoCard = ({
 }) => {
   const [iconOpen, setIconopen] = useState(false);
   const { likeVideoState, dispatchLikeVideo } = useLikeVideoContext();
-  const { likes} = likeVideoState;
-  const {userDetailes}=useAuth();
-  const {token}=userDetailes;
-  const navigate=useNavigate()
+  const { likes } = likeVideoState;
+  const { userDetailes } = useAuth();
+  const { token } = userDetailes;
+  const { watchlaterState, dispatchWatchlater } = usewatchlater();
+  const { watchLater } = watchlaterState;
+  const navigate = useNavigate();
 
-
-  const userLikedvideo=videos.find((item)=>item._id===_id)
-  const likeHandler=(()=>{
+  const userLikedvideo = videos.find((item) => item._id === _id);
+  const video = videos.find((item) => item._id === _id);
+  const likeHandler = () => {
     if (token) {
-      addtoLike(userLikedvideo,token,dispatchLikeVideo)
-      
-    }else{
-      navigate("/login")
-      toast.warning("Need Login to like this video")
+      addtoLike(userLikedvideo, token, dispatchLikeVideo);
+    } else {
+      navigate("/login");
+      toast.warning("Need Login to like this video");
     }
-  })
+  };
 
-  const deleteHandler=(()=>{
-    deletelikeVideo(_id,token,dispatchLikeVideo)
+  const deleteHandler = () => {
+    deletelikeVideo(_id, token, dispatchLikeVideo);
+  };
+
+  const watchLaterHandler = (_id) => {
+    if (token) {
+      addTowatchlater(video, token, dispatchWatchlater);
+    }
+    else{
+      navigate("/login")
+      toast.warning("Need Login to like this video");
+
+    }
+  };
+  const watchlaterDeleteHandler=(()=>{
+    deleteWatchlater(_id,token,dispatchWatchlater)
   })
   return (
     <>
-      <section className="video-card-container">
+      <section> 
         <div className="video-image-container">
           <img src={thumbnail} alt="thumbnail" />
           <small className="video-length">{videoLength}</small>
@@ -75,11 +89,18 @@ export const VideoCard = ({
               <>
                 <div className="icons-container dis_flex">
                   {likes.some((item) => item._id === _id) ? (
-                     <AiFillLike className="icons" onClick={deleteHandler} />
+                    <AiFillLike className="icons" onClick={deleteHandler} />
                   ) : (
                     <AiOutlineLike className="icons" onClick={likeHandler} />
                   )}
-                  <MdOutlineWatchLater className="icons" />
+                  {watchLater.some((items) => items._id === _id) ? (
+                    <MdWatchLater className="icons" onClick={watchlaterDeleteHandler}/>
+                  ) : (
+                    <MdOutlineWatchLater
+                      className="icons"
+                      onClick={watchLaterHandler}
+                    />
+                  )}
                   <RiPlayListFill className="icons" />
                 </div>
               </>

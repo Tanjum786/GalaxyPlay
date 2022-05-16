@@ -15,23 +15,30 @@
   width: 4rem;
   text-align: center;
 }
+
 .footer_container {
   margin-left: 1rem;
   gap: 0.5rem;
 }
+
 .video-title {
   width: 23rem;
   font-size: 1.5rem;
   word-wrap: break-word;
 }
-.channel-container,.icons-container,.video-title {
+
+.channel-container,
+.icons-container,
+.video-title {
   padding: 0.5rem;
 }
+
 .channel-name,
 .channel-views {
   padding: 0.1rem;
   color: var(--gray-color);
 }
+
 .threedots,
 .icons {
   cursor: pointer;
@@ -39,11 +46,13 @@
   height: 2rem;
   border-radius: 50%;
 }
+
 .threedots:hover,
 .icons:hover {
   background-color: var(--boder-color);
   color: var(--primary-balck-color);
 }
+
 .icons-container {
   gap: 1rem;
   justify-content: center;
