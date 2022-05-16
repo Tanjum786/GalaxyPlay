@@ -1,8 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { useEffect, useState } from "react";
-import { Chips, Footer, SideBar } from "../../Components";
-import { VideoCard } from "../../Components/VideoCard/VideoCard";
+import { Chips, Footer, SideBar, VideoCard } from "../../Components";
 import "./explore.css";
 
 export const Explore = () => {
@@ -22,7 +21,7 @@ export const Explore = () => {
         <SideBar />
         <div className="mainvideo-container">
           <Chips />
-          <div className="vide-card-conatiner dis_flex">
+          <div className="video-card-conatiner dis_flex">
             {videodata.map(
               ({
                 _id,
