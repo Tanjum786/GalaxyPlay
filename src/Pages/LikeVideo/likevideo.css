@@ -1,0 +1,24 @@
+.page-heading {
+  color: var(--light-red-color);
+  font-size: 3rem;
+  text-align: center;
+}
+
+.video-section {
+  width: 100%;
+  margin-left: 10rem;
+  padding: 2rem;
+  flex-direction: column;
+}
+
+.video-container {
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.page-subHeading {
+  text-align: center;
+  font-size: 4rem;
+}

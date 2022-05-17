@@ -1,11 +1,35 @@
 import React from "react";
-import { SideBar } from "../../Components";
+import "./likevideo.css";
+import { LikeCard, SideBar } from "../../Components";
+import { getlikevideo } from "../../ApiCalls";
+import { useAuth, useLikeVideoContext } from "../../context";
 
 export const LikeVideo = () => {
+  const { userDetailes } = useAuth();
+  const { token } = userDetailes;
+  const { likeVideoState, dispatchLikeVideo } = useLikeVideoContext();
+  const { likes } = likeVideoState;
+
+  getlikevideo(token, dispatchLikeVideo);
+
   return (
-    <div className="liked-container dis_flex">
+    <main className="dis_flex">
       <SideBar />
-      <h1>This is LikeVideo page</h1>
-    </div>
+
+      <section className="video-section dis_flex">
+        <div className="page-container">
+          <h1 className="page-heading">Liked Videos - {likes.length}</h1>
+        </div>
+        <div className="video-container dis_flex">
+          {likes.length !== 0 ? (
+            likes.map((item)=>{
+           return <LikeCard key={item._id} {...item} />
+            })
+          ) : (
+            <h1 className="page-subHeading">No liked videos yet </h1>
+          )}
+        </div>
+      </section>
+    </main>
   );
 };

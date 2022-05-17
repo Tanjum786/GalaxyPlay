@@ -1,5 +1,5 @@
 import "./App.css";
-import { Footer, Navbar } from "./Components";
+import {Navbar } from "./Components";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Route, Routes } from "react-router-dom";
@@ -70,7 +70,6 @@ function App() {
           }
         />
       </Routes>
-      <Footer />
     </div>
   );
 }

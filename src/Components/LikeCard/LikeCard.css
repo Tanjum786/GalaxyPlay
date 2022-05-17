@@ -1,0 +1,77 @@
+.video-img-div {
+  padding: 1rem;
+  width: 25rem;
+  position: relative;
+}
+
+.video-image {
+  border: 1px solid var(--pureWhite-color);
+}
+
+.title-container {
+  flex-direction: column;
+}
+
+.video-card-section {
+  border-radius: 1rem;
+  background-color: var(--primary-balck-color);
+}
+
+.video-card-title {
+  font-size: 2rem;
+  padding: 0;
+  margin-top: 3rem;
+}
+
+.icons-like {
+  margin-top: 3rem;
+  margin-left: 1rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.deleteIcon-container {
+  display: flex;
+
+}
+
+.video-card-length {
+  position: absolute;
+  right: 2rem;
+  bottom: 1.5rem;
+  font-size: 1rem;
+  background-color: var(--primary-balck-color);
+  width: 2rem;
+  text-align: center;
+}
+
+.icons-like:hover {
+  background-color: var(--boder-color);
+  color: var(--primary-balck-color);
+}
+
+@media screen and (max-width: 768px) {
+  .deleteIcon-container {
+    margin-left: 0rem;
+  }
+
+  .video-card-title {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .video-card-title {
+    font-size: 1rem;
+  }
+
+  .video-card-length {
+    bottom: 3rem;
+  }
+
+  .icons-like {
+    margin-top: 1rem;
+  }
+}
