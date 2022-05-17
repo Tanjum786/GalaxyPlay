@@ -43,12 +43,14 @@ export const LikeCard = ({
     <>
       <section className="video-card-section dis_flex">
         <div className="video-img-div">
+
           <img
             className="video-image"
             src={thumbnail}
             alt="likedvideo-image"
             onClick={() => navigate(`/explore/${_id}`)}
-          />
+         
+          <img className="video-image" src={thumbnail} alt={title.slice(0,25)} /
           <small className="video-card-length">{videoLength}</small>
         </div>
         <div className="dis_flex title-container">
