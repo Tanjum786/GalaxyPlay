@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { fetchData, getcategorydata } from "../../ApiCalls";
 import { Footer, Navbar, SideBar, VideoCard } from "../../Components";
