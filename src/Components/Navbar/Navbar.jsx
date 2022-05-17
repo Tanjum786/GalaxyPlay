@@ -8,9 +8,11 @@ import { HamburgerMenu } from "../Hamburger/HamburgerMenu";
 import { toast } from "react-toastify";
 import { FaUserCircle } from "react-icons/fa";
 import { useAuth } from "../../context/auth-context/AuthContext";
+import { useCategory } from "../../context";
 
-export const Navbar = () => {
+export const Navbar = ({searchQuery, setsearch}) => {
   const [open, setopen] = useState(false);
+  const {dispatchCategory}=useCategory()
   const {
     userDetailes,
     setuserDetailes,
@@ -42,6 +44,12 @@ export const Navbar = () => {
       onClick={() => setopen(!open)}
     />
   );
+
+  const searchInput=((e)=>{
+    dispatchCategory({type:"CLEAR_CATEGORY"})
+    setsearch(e.target.value)
+
+  })
   return (
       <nav className="nav-bar">
         <div className="header-container dis_flex">
@@ -68,6 +76,8 @@ export const Navbar = () => {
                 type="text"
                 placeholder=" Search Your Desire"
                 name="search"
+                value={searchQuery}
+                onChange={searchInput}
               />
               <i className="fa fa-search search-icon"></i>
             </div>
