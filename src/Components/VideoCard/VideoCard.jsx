@@ -6,9 +6,13 @@ import { MdOutlineWatchLater, MdWatchLater } from "react-icons/md";
 import { RiPlayListFill } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { addtoLike, deletelikeVideo, deleteWatchlater } from "../../ApiCalls";
+import {
+  addtoLike,
+  addTowatchlater,
+  deletelikeVideo,
+  deleteWatchlater,
+} from "../../ApiCalls";
 import { useAuth, useLikeVideoContext, usewatchlater } from "../../context";
-import { addTowatchlater } from "../../ApiCalls/WatchlaterApi/addTowatchlaterApi";
 
 export const VideoCard = ({
   _id,
@@ -47,21 +51,23 @@ export const VideoCard = ({
   const watchLaterHandler = (_id) => {
     if (token) {
       addTowatchlater(video, token, dispatchWatchlater);
-    }
-    else{
-      navigate("/login")
+    } else {
+      navigate("/login");
       toast.warning("Need Login to like this video");
-
     }
   };
-  const watchlaterDeleteHandler=(()=>{
-    deleteWatchlater(_id,token,dispatchWatchlater)
-  })
+  const watchlaterDeleteHandler = () => {
+    deleteWatchlater(_id, token, dispatchWatchlater);
+  };
   return (
     <>
-      <section> 
+      <section>
         <div className="video-image-container">
-          <img src={thumbnail} alt="thumbnail" />
+          <img
+            src={thumbnail}
+            alt="thumbnail"
+            onClick={() => navigate(`/explore/${_id}`)}
+          />
           <small className="video-length">{videoLength}</small>
         </div>
         <footer className="dis_flex footer_container">
@@ -94,7 +100,10 @@ export const VideoCard = ({
                     <AiOutlineLike className="icons" onClick={likeHandler} />
                   )}
                   {watchLater.some((items) => items._id === _id) ? (
-                    <MdWatchLater className="icons" onClick={watchlaterDeleteHandler}/>
+                    <MdWatchLater
+                      className="icons"
+                      onClick={watchlaterDeleteHandler}
+                    />
                   ) : (
                     <MdOutlineWatchLater
                       className="icons"

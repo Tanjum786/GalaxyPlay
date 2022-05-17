@@ -1,6 +1,7 @@
 import React from "react";
-import { AiOutlineDelete, AiOutlineLike,AiFillLike } from "react-icons/ai";
+import { AiOutlineDelete, AiOutlineLike, AiFillLike } from "react-icons/ai";
 import { RiPlayListFill } from "react-icons/ri";
+import { useNavigate } from "react-router-dom";
 import { addtoLike, deletelikeVideo, deleteWatchlater } from "../../ApiCalls";
 import { useAuth, useLikeVideoContext, usewatchlater } from "../../context";
 
@@ -11,31 +12,36 @@ export const WatchlaterCard = ({
   channelName,
   _id,
 }) => {
-const {userDetailes}=useAuth();
-const {token}=userDetailes;
-const {dispatchWatchlater,watchlaterState}=usewatchlater()
-const {watchLater}=watchlaterState;
-const{dispatchLikeVideo,likeVideoState}=useLikeVideoContext()
-const {likes}=likeVideoState;
+  const { userDetailes } = useAuth();
+  const { dispatchWatchlater, watchlaterState } = usewatchlater();
+  const { dispatchLikeVideo, likeVideoState } = useLikeVideoContext();
+  const navigate=useNavigate();
+  const { likes } = likeVideoState;
+  const { watchLater } = watchlaterState;
+  const { token } = userDetailes;
 
+  const likevideo = watchLater.find((item) => item._id === _id);
 
-const likevideo=watchLater.find((item)=>item._id===_id)
+  const addtoLikeHandler = () => {
+    addtoLike(likevideo, token, dispatchLikeVideo);
+  };
 
-const addtoLikeHandler=(()=>{
-  addtoLike(likevideo,token,dispatchLikeVideo)
-})
-
-const deleteformlike=(()=>{
-  deletelikeVideo(_id,token,dispatchLikeVideo)
-})
- const watchlaterDeleteHandler=(()=>{
-   deleteWatchlater(_id,token,dispatchWatchlater)
- })
+  const deleteformlike = () => {
+    deletelikeVideo(_id, token, dispatchLikeVideo);
+  };
+  const watchlaterDeleteHandler = () => {
+    deleteWatchlater(_id, token, dispatchWatchlater);
+  };
   return (
     <>
       <section className="video-card-section dis_flex">
         <div className="video-img-div">
-          <img className="video-image" src={thumbnail} alt="likedvideo-image" />
+          <img
+            className="video-image"
+            src={thumbnail}
+            alt="likedvideo-image"
+            onClick={() => navigate(`/explore/${_id}`)}
+          />
           <small className="video-card-length">{videoLength}</small>
         </div>
         <div className="dis_flex title-container">
@@ -44,12 +50,18 @@ const deleteformlike=(()=>{
             <p className="channel-name">{channelName}</p>
           </div>
           <div className="deleteIcon-container">
-            <AiOutlineDelete className="icons-like" onClick={watchlaterDeleteHandler}/>
+            <AiOutlineDelete
+              className="icons-like"
+              onClick={watchlaterDeleteHandler}
+            />
             {likes.some((item) => item._id === _id) ? (
-                    <AiFillLike className="icons-like" onClick={deleteformlike}/>
-                  ) : (
-                    <AiOutlineLike className="icons-like" onClick={addtoLikeHandler} />
-                  )}
+              <AiFillLike className="icons-like" onClick={deleteformlike} />
+            ) : (
+              <AiOutlineLike
+                className="icons-like"
+                onClick={addtoLikeHandler}
+              />
+            )}
             <RiPlayListFill className="icons-like" />
           </div>
         </div>

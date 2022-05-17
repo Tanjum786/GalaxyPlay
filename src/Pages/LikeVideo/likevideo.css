@@ -22,3 +22,10 @@
   text-align: center;
   font-size: 4rem;
 }
+
+.clear-btn {
+  background-color: var(--pureWhite-color);
+  border-radius: 00.5rem;
+  padding: 0.5rem;
+  border: 1px solid var(--light-red-color);
+}
