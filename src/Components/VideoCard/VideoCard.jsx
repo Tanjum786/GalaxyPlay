@@ -68,6 +68,7 @@ export const VideoCard = ({
             alt="thumbnail"
             onClick={() => navigate(`/explore/${_id}`)}
           />
+          <img src={thumbnail} alt={title.slice(0.25)} />
           <small className="video-length">{videoLength}</small>
         </div>
         <footer className="dis_flex footer_container">
