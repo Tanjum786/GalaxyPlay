@@ -61,7 +61,7 @@ export const VideoCard = ({
     <>
       <section> 
         <div className="video-image-container">
-          <img src={thumbnail} alt="thumbnail" />
+          <img src={thumbnail} alt={title.slice(0.25)} />
           <small className="video-length">{videoLength}</small>
         </div>
         <footer className="dis_flex footer_container">
