@@ -9,7 +9,7 @@ import {
   deleteWatchlater,
   SinglevideoApi,
 } from "../../ApiCalls";
-import { SideBar } from "../../Components";
+import { Footer, Navbar, SideBar } from "../../Components";
 import "./Singlevideo.css";
 import { AiFillLike, AiOutlineLike } from "react-icons/ai";
 import { MdWatchLater, MdOutlineWatchLater } from "react-icons/md";
@@ -61,59 +61,63 @@ export const SingleVideoPage = () => {
   };
 
   const addtohistoryHandler = () => {
-    addToHistory(Video, token,dispatchHistory);
+    addToHistory(Video, token, dispatchHistory);
   };
 
   SinglevideoApi(videoId, setvideo);
 
   return (
-    <div className="singlevideo-maindiv">
-      <SideBar />
-      <div className="single-video-conatainer dis_flex">
-        <section className="single-video-display">
-          <ReactPlayer
-            width="100%"
-            height="100%"
-            url={`https://www.youtube.com/watch?v=${Video.VideoId}`}
-            controls={true}
-            onStart={addtohistoryHandler}
-          />
-        </section>
-        <p className="single-video-title">{Video.title}</p>
-        <div className="singlepage-icon-container dis_flex">
-          <p className="views-par">{Video.views} . 20 march 2020</p>
-          <div className="singlepage-icons-container dis_flex">
-            {likes.some((item) => item._id === Video._id) ? (
-              <AiFillLike
-                className="singlepage-icons"
-                onClick={deleteHandler}
-              />
-            ) : (
-              <AiOutlineLike
-                className="singlepage-icons"
-                onClick={likeHandler}
-              />
-            )}
-            {watchLater.some((items) => items._id === Video._id) ? (
-              <MdWatchLater
-                className="singlepage-icons"
-                onClick={watchlaterDeleteHandler}
-              />
-            ) : (
-              <MdOutlineWatchLater
-                className="singlepage-icons"
-                onClick={watchLaterHandler}
-              />
-            )}
-            <RiPlayListFill className="singlepage-icons" />
+    <>
+      <Navbar />
+      <div className="singlevideo-maindiv">
+        <SideBar />
+        <div className="single-video-conatainer dis_flex">
+          <section className="single-video-display">
+            <ReactPlayer
+              width="100%"
+              height="100%"
+              url={`https://www.youtube.com/watch?v=${Video.VideoId}`}
+              controls={true}
+              onStart={addtohistoryHandler}
+            />
+          </section>
+          <p className="single-video-title">{Video.title}</p>
+          <div className="singlepage-icon-container dis_flex">
+            <p className="views-par">{Video.views} . 20 march 2020</p>
+            <div className="singlepage-icons-container dis_flex">
+              {likes.some((item) => item._id === Video._id) ? (
+                <AiFillLike
+                  className="singlepage-icons"
+                  onClick={deleteHandler}
+                />
+              ) : (
+                <AiOutlineLike
+                  className="singlepage-icons"
+                  onClick={likeHandler}
+                />
+              )}
+              {watchLater.some((items) => items._id === Video._id) ? (
+                <MdWatchLater
+                  className="singlepage-icons"
+                  onClick={watchlaterDeleteHandler}
+                />
+              ) : (
+                <MdOutlineWatchLater
+                  className="singlepage-icons"
+                  onClick={watchLaterHandler}
+                />
+              )}
+              <RiPlayListFill className="singlepage-icons" />
+            </div>
+          </div>
+          <div className="discription-container dis_flex">
+            <p className="discription-par">
+              <strong>Discription :</strong> {Video.discription}
+            </p>
           </div>
         </div>
-        <div className="discription-container dis_flex">
-          <p className="discription-par">
-            <strong>Discription :</strong> {Video.discription}
-          </p>
-        </div>
       </div>
-    </div>
+      <Footer/>
+    </>
   );
 };
