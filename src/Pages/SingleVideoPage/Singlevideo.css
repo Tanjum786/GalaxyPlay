@@ -11,6 +11,10 @@
     margin-left: 25rem;
 }
 
+.singlevideo-maindiv{
+    min-height: 100vh;
+}
+
 .single-video-title {
     font-size: 2rem;
     width: 85rem;

@@ -52,7 +52,7 @@ export const Signup = () => {
   return (
     <>
     <Navbar/>
-      <div className="e_container">
+      <div className="main-explore e_container">
         <section className="e_login_signup_container dis_flex">
           <form>
             <div className="login_signup_container signup_container gap_s dis_flex">

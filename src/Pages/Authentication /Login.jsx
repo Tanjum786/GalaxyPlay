@@ -32,7 +32,7 @@ export const Login = () => {
   return (
     <>
     <Navbar/>
-      <div className="e_container">
+      <div className="main-explore e_container">
         <section className="e_login_signup_container dis_flex">
           <form onSubmit={submitHandler}>
             <div className="login_signup_container gap_s dis_flex">

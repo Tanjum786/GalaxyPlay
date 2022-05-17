@@ -9,7 +9,7 @@ export const WatchLater = () => {
   return (
     <>
       <Navbar />
-      <main className="dis_flex">
+      <main className="main-explore dis_flex">
         <SideBar />
 
         <section className="video-section dis_flex">

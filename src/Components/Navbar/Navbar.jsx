@@ -74,7 +74,7 @@ export const Navbar = ({searchQuery, setsearch}) => {
             <div className="search">
               <input
                 type="text"
-                placeholder=" Search Your Desire"
+                placeholder=" Search Your Favorite one"
                 name="search"
                 value={searchQuery}
                 onChange={searchInput}

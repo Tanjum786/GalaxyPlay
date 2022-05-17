@@ -21,7 +21,7 @@ export const Explore = () => {
   return (
     <>
       <Navbar searchQuery={searchQuery} setsearch={setsearch} />
-      <main className="dis_flex">
+      <main className="main-explore dis_flex">
         <SideBar />
         <div className="mainvideo-container">
           <nav className="chips-container">
@@ -59,7 +59,7 @@ export const Explore = () => {
                 );
               })
             ) : (
-              <h1>No such video exist</h1>
+              <h1 className="warning-title">No such videos exist</h1>
             )}
           </div>
         </div>

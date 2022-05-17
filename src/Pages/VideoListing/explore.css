@@ -2,11 +2,20 @@
     width: 100%;
 }
 
+.main-explore{
+    min-height: 100vh;
+}
+
 .video-card-conatiner {
     flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
     margin-left: 8rem;
+}
+
+.warning-title{
+    padding: 10rem;
+    font-size: 5rem;
 }
 
 .chips-container {
