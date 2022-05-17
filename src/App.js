@@ -12,6 +12,7 @@ import {
   Login,
   PlaylistVideo,
   Signup,
+  SingleVideoPage,
   WatchLater,
 } from "./Pages";
 
@@ -30,13 +31,13 @@ function App() {
         draggable
         pauseOnHover
       />
-
       <Navbar />
       <Routes>
         <Route path="/mock" element={<MockmanEs />} />
         <Route path="/" element={<Explore />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/explore/:videoId" element={<SingleVideoPage/>}/>
         <Route
           path="/wacthlater"
           element={
