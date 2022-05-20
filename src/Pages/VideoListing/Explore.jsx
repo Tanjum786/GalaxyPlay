@@ -27,7 +27,7 @@ export const Explore = () => {
           <nav className="chips-container">
             <div className="chips-list dis_flex">
               <button
-                className="btn-singer-name"
+                className={`btn-singer-name ${category===""?"Isactive":""}` }
                 onClick={() => dispatchCategory({ type: "CLEAR_CATEGORY" })}
               >
                 All
@@ -35,7 +35,7 @@ export const Explore = () => {
               {categories.map((cate) => (
                 <button
                 key={cate._id}
-                  className="btn-singer-name"
+                className={`btn-singer-name ${category==cate.categoryName?"Isactive":""}` }
                   onClick={() =>
                     dispatchCategory({
                       type: "SELECT_CATEGORY",
