@@ -34,6 +34,7 @@ export const Explore = () => {
               </button>
               {categories.map((cate) => (
                 <button
+                key={cate._id}
                   className="btn-singer-name"
                   onClick={() =>
                     dispatchCategory({
@@ -52,7 +53,7 @@ export const Explore = () => {
               searchFiltervideo.map((video) => {
                 return (
                   <VideoCard
-                    key={videodata._id}
+                    key={video._id}
                     {...video}
                     videos={videodata}
                   />
