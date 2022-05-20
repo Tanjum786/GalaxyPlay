@@ -5,6 +5,8 @@ import { Watchlatercontextprovider } from "./Watchlater-context/Watchlatercontex
 import { useAuth } from "./auth-context/AuthContext";
 import { useLikeVideoContext } from "./Liked-context/Likevideocontext";
 import { usewatchlater } from "./Watchlater-context/Watchlatercontext";
+import { HistorycontextProvider } from "./History-context/historycontext";
+import { useHistoryContext } from "./History-context/historycontext";
 
 export {
   AuthProvider,
@@ -13,5 +15,7 @@ export {
   Watchlatercontextprovider,
   useAuth,
   useLikeVideoContext,
-  usewatchlater
+  usewatchlater,
+  HistorycontextProvider,
+  useHistoryContext
 };

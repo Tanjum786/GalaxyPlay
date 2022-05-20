@@ -6,6 +6,7 @@ import { Chips } from "./Chips/Chips";
 import { WatchlaterCard } from "./WatchlaterCard/WatchlaterCard";
 import { VideoCard } from "./VideoCard/VideoCard";
 import { LikeCard } from "./LikeCard/LikeCard";
+import { HistroyCard } from "./Historycard/HistroyCard";
 
 export {
   Footer,
@@ -16,4 +17,5 @@ export {
   WatchlaterCard,
   VideoCard,
   LikeCard,
+  HistroyCard
 };

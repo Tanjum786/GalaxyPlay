@@ -1,11 +1,15 @@
 import React from "react";
 import { AiOutlineDelete } from "react-icons/ai";
-import { MdOutlineWatchLater,MdWatchLater } from "react-icons/md";
+import { MdOutlineWatchLater, MdWatchLater } from "react-icons/md";
 import { RiPlayListFill } from "react-icons/ri";
 import "./LikeCard.css";
-import { deletelikeVideo, deleteWatchlater } from "../../ApiCalls";
+import {
+  addTowatchlater,
+  deletelikeVideo,
+  deleteWatchlater,
+} from "../../ApiCalls";
 import { useAuth, useLikeVideoContext, usewatchlater } from "../../context";
-import { addTowatchlater } from "../../ApiCalls/WatchlaterApi/addTowatchlaterApi";
+import { useNavigate } from "react-router-dom";
 export const LikeCard = ({
   title,
   videoLength,
@@ -14,30 +18,37 @@ export const LikeCard = ({
   _id,
 }) => {
   const { userDetailes } = useAuth();
-  const { token } = userDetailes;
-  const { dispatchLikeVideo,likeVideoState } = useLikeVideoContext();
-  const {likes}=likeVideoState;
+  const { dispatchLikeVideo, likeVideoState } = useLikeVideoContext();
+  const navigate = useNavigate();
   const { dispatchWatchlater, watchlaterState } = usewatchlater();
+  const { likes } = likeVideoState;
+  const { token } = userDetailes;
   const { watchLater } = watchlaterState;
 
-const watchLatervideo=likes.find((item)=>item._id===_id)
-  
+  const watchLatervideo = likes.find((item) => item._id === _id);
+
   const unlikeVideo = () => {
     deletelikeVideo(_id, token, dispatchLikeVideo);
   };
 
-  const watchLaterHandlerInlike=(()=>{
-    addTowatchlater(watchLatervideo,token,dispatchWatchlater)
-  })
+  const watchLaterHandlerInlike = () => {
+    addTowatchlater(watchLatervideo, token, dispatchWatchlater);
+  };
 
-  const watchlaterDeleteHandlerInLike=(()=>{
-    deleteWatchlater(_id,token,dispatchWatchlater)
-  })
+  const watchlaterDeleteHandlerInLike = () => {
+    deleteWatchlater(_id, token, dispatchWatchlater);
+  };
 
   return (
     <>
       <section className="video-card-section dis_flex">
         <div className="video-img-div">
+          <img
+            className="video-image"
+            src={thumbnail}
+            alt="likedvideo-image"
+            onClick={() => navigate(`/explore/${_id}`)}
+          />
           <img className="video-image" src={thumbnail} alt={title.slice(0,25)} />
           <small className="video-card-length">{videoLength}</small>
         </div>
