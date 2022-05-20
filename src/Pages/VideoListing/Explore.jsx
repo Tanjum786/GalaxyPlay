@@ -27,14 +27,15 @@ export const Explore = () => {
           <nav className="chips-container">
             <div className="chips-list dis_flex">
               <button
-                className="btn-singer-name"
+                className={`btn-singer-name ${category===""?"Isactive":""}` }
                 onClick={() => dispatchCategory({ type: "CLEAR_CATEGORY" })}
               >
                 All
               </button>
               {categories.map((cate) => (
                 <button
-                  className="btn-singer-name"
+                key={cate._id}
+                className={`btn-singer-name ${category==cate.categoryName?"Isactive":""}` }
                   onClick={() =>
                     dispatchCategory({
                       type: "SELECT_CATEGORY",
@@ -52,7 +53,7 @@ export const Explore = () => {
               searchFiltervideo.map((video) => {
                 return (
                   <VideoCard
-                    key={videodata._id}
+                    key={video._id}
                     {...video}
                     videos={videodata}
                   />

@@ -6,6 +6,7 @@ import { PlaylistVideo } from "./PlaylistVideo/PlaylistVideo";
 import { Explore } from "./VideoListing/Explore";
 import { WatchLater } from "./WatchlaterVideo/WatchLater";
 import { SingleVideoPage } from "./SingleVideoPage/SingleVideoPage";
+import { SingleVideocardPage } from "./SingleVideoPage.jsx/SingleVideocardPage";
 
 export {
   Login,
@@ -16,4 +17,5 @@ export {
   Explore,
   WatchLater,
   SingleVideoPage,
+  SingleVideocardPage
 };

@@ -11,6 +11,14 @@
   flex-direction: column;
 }
 
+.cursor{
+  cursor: pointer;
+}
+
+.page-container{
+  justify-content: center;
+  gap: 2rem;
+}
 .video-container {
   flex-wrap: wrap;
   flex-direction: column;

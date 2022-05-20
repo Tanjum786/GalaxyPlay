@@ -11,13 +11,19 @@ import {
   Login,
   PlaylistVideo,
   Signup,
+  SingleVideocardPage,
   SingleVideoPage,
   WatchLater,
 } from "./Pages";
+import { useModal } from "./context";
+import { PlaylistModal } from "./Components";
 
 function App() {
+  const{modalState}=useModal();
+  const {modalStatus}=modalState;
   return (
     <div className="App">
+    {modalStatus?<PlaylistModal/>:null}
       <ToastContainer
         position="bottom-right"
         autoClose={3000}
@@ -41,6 +47,14 @@ function App() {
           element={
             <RequireAuth>
               <WatchLater />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/playlist/:playlistId"
+          element={
+            <RequireAuth>
+              <SingleVideocardPage />
             </RequireAuth>
           }
         />
