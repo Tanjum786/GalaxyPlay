@@ -6,6 +6,9 @@ import { WatchlaterCard } from "./WatchlaterCard/WatchlaterCard";
 import { VideoCard } from "./VideoCard/VideoCard";
 import { LikeCard } from "./LikeCard/LikeCard";
 import { HistroyCard } from "./Historycard/HistroyCard";
+import { PlaylistModal } from "./playlistModal/PlaylistModal";
+import { PlaylistCard } from "./Playlistcard/PlaylistCard";
+import { Playlistvideocard } from "./PlaylistVideocard/PlaylistvideoCard";
 
 export {
   Footer,
@@ -15,5 +18,8 @@ export {
   WatchlaterCard,
   VideoCard,
   LikeCard,
-  HistroyCard
+  HistroyCard,
+  PlaylistModal,
+  PlaylistCard,
+  Playlistvideocard
 };

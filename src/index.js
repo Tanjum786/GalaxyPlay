@@ -9,6 +9,8 @@ import {
   CatergoryProvider,
   HistorycontextProvider,
   LikevideocontextProvider,
+  PlaylistModalprovider,
+  PlaylistProvider,
   ShowpasswordProvider,
   Watchlatercontextprovider,
 } from "./context";
@@ -22,13 +24,17 @@ ReactDOM.render(
       <LikevideocontextProvider>
         <Watchlatercontextprovider>
           <HistorycontextProvider>
-            <CatergoryProvider>
-              <AuthProvider>
-                <ShowpasswordProvider>
-                  <App />
-                </ShowpasswordProvider>
-              </AuthProvider>
-            </CatergoryProvider>
+            <PlaylistModalprovider>
+              <PlaylistProvider>
+                <CatergoryProvider>
+                  <AuthProvider>
+                    <ShowpasswordProvider>
+                      <App />
+                    </ShowpasswordProvider>
+                  </AuthProvider>
+                </CatergoryProvider>
+              </PlaylistProvider>
+            </PlaylistModalprovider>
           </HistorycontextProvider>
         </Watchlatercontextprovider>
       </LikevideocontextProvider>

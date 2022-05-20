@@ -1,15 +1,11 @@
-import { AuthProvider } from "./auth-context/AuthContext";
-import { LikevideocontextProvider } from "./Liked-context/Likevideocontext";
+import { AuthProvider ,useAuth} from "./auth-context/AuthContext";
+import { LikevideocontextProvider,useLikeVideoContext } from "./Liked-context/Likevideocontext";
 import { ShowpasswordProvider } from "./showpassword-context/ShowpasswordContext";
-import { Watchlatercontextprovider } from "./Watchlater-context/Watchlatercontext";
-import { useAuth } from "./auth-context/AuthContext";
-import { useLikeVideoContext } from "./Liked-context/Likevideocontext";
-import { usewatchlater } from "./Watchlater-context/Watchlatercontext";
-import { HistorycontextProvider } from "./History-context/historycontext";
-import { useHistoryContext } from "./History-context/historycontext";
-import { CatergoryProvider } from "./CategoryFilter.jsx/Categoryfilter";
-import { useCategory } from "./CategoryFilter.jsx/Categoryfilter";
-
+import { Watchlatercontextprovider,usewatchlater } from "./Watchlater-context/Watchlatercontext";
+import { HistorycontextProvider,useHistoryContext } from "./History-context/historycontext";
+import { CatergoryProvider,useCategory } from "./CategoryFilter.jsx/Categoryfilter";
+import { PlaylistModalprovider,useModal } from "./PlaylistModalcontext/PlaylitModalcontext";
+import { PlaylistProvider ,useplaylist} from "./PlaylistContext/Playlistcontext";
 export {
   AuthProvider,
   LikevideocontextProvider,
@@ -21,5 +17,10 @@ export {
   HistorycontextProvider,
   useHistoryContext,
   CatergoryProvider,
-  useCategory
+  useCategory,
+  PlaylistModalprovider,
+  useModal,
+  PlaylistProvider,
+  useplaylist
+  
 };
