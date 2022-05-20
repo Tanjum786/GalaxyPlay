@@ -1,0 +1,17 @@
+.playlistCard-container{
+    border: 1px solid var(--pureWhite-color);
+    padding: 1rem;
+    font-size: 2rem;
+    justify-content: space-between;
+    width: 50%;
+    
+}
+
+.video_title{
+    font-size: 2rem;
+    padding: 1rem;
+}
+.playlistsCard{
+    color: var(--pureWhite-color);
+
+}
