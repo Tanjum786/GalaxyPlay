@@ -9,6 +9,12 @@ import { deletehistoryVideo } from "./HistoryApi/deletehistoryVideo";
 import { deleteAllHistory } from "./HistoryApi/deleteAllHistory";
 import { fetchData } from "./GetvideoApi/fetchData";
 import { getcategorydata } from "./GetvideoApi/getcategorydata";
+import { Createplaylist } from "./PlaylistApi/Createplaylist";
+import { addVideoToPlaylist } from "./PlaylistApi/AddVideotoplaylist";
+import { deleteVideoFromPlaylist } from "./PlaylistApi/deleteVideoFromPlaylist";
+import { deletePlaylist } from "./PlaylistApi/deletePlaylist";
+import { getSingleplaylist } from "./PlaylistApi/getSingleplaylist";
+import { getplaylist } from "./PlaylistApi/getplaylist";
 
 export {
   addtoLike,
@@ -21,5 +27,11 @@ export {
   deletehistoryVideo,
   deleteAllHistory,
   fetchData,
-  getcategorydata
+  getcategorydata,
+  Createplaylist,
+  addVideoToPlaylist,
+  deletePlaylist,
+  deleteVideoFromPlaylist,
+  getSingleplaylist,
+  getplaylist
 };
