@@ -1,4 +1,5 @@
-## GALAXYPLAY
+## [GalaxyPlay](https://galaxy-play-it.vercel.app/)
+
 
 GalaxyPlay is a video library.It is music app.Where i have listed some videos of Hindi songs.
 
