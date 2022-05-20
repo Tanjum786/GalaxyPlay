@@ -18,6 +18,7 @@ import {
   useAuth,
   useHistoryContext,
   useLikeVideoContext,
+  useModal,
   usewatchlater,
 } from "../../context";
 
@@ -32,6 +33,7 @@ export const SingleVideoPage = () => {
   const { watchLater } = watchlaterState;
   const { likes } = likeVideoState;
   const { token } = userDetailes;
+  const {dispatchModal}=useModal()
 
   const navigate = useNavigate();
 
@@ -107,7 +109,7 @@ export const SingleVideoPage = () => {
                   onClick={watchLaterHandler}
                 />
               )}
-              <RiPlayListFill className="singlepage-icons" />
+              <RiPlayListFill className="singlepage-icons" onClick={()=>dispatchModal({ type:"MODAL-OPEN", payload:Video })}/>
             </div>
           </div>
           <div className="discription-container dis_flex">

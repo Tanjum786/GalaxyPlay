@@ -14,6 +14,7 @@ import {
   useAuth,
   useHistoryContext,
   useLikeVideoContext,
+  useModal,
   usewatchlater,
 } from "../../context";
 import { SingleVideoPage } from "../../Pages";
@@ -28,6 +29,8 @@ export const HistroyCard = ({
   const { userDetailes } = useAuth();
   const { token } = userDetailes;
   const { dispatchLikeVideo, likeVideoState } = useLikeVideoContext();
+  const {dispatchModal}=useModal()
+
   const { likes } = likeVideoState;
   const { dispatchWatchlater, watchlaterState } = usewatchlater();
   const { watchLater } = watchlaterState;
@@ -98,7 +101,7 @@ export const HistroyCard = ({
                 onClick={watchLaterHandler}
               />
             )}
-            <RiPlayListFill className="icons-like" />
+            <RiPlayListFill className="icons-like"  onClick={()=>dispatchModal({ type:"MODAL-OPEN", payload:video })} />
             <AiOutlineDelete className="icons-like" onClick={historydlelete} />
           </div>
         </div>

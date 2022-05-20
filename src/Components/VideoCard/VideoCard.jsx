@@ -12,7 +12,12 @@ import {
   deletelikeVideo,
   deleteWatchlater,
 } from "../../ApiCalls";
-import { useAuth, useLikeVideoContext, usewatchlater } from "../../context";
+import {
+  useAuth,
+  useLikeVideoContext,
+  useModal,
+  usewatchlater,
+} from "../../context";
 
 export const VideoCard = ({
   _id,
@@ -26,12 +31,14 @@ export const VideoCard = ({
 }) => {
   const [iconOpen, setIconopen] = useState(false);
   const { likeVideoState, dispatchLikeVideo } = useLikeVideoContext();
-  const { likes } = likeVideoState;
-  const { userDetailes } = useAuth();
-  const { token } = userDetailes;
   const { watchlaterState, dispatchWatchlater } = usewatchlater();
-  const { watchLater } = watchlaterState;
   const navigate = useNavigate();
+  const { userDetailes } = useAuth();
+  const { dispatchModal } = useModal();
+
+  const { likes } = likeVideoState;   
+  const { token } = userDetailes;
+  const { watchLater } = watchlaterState;
 
   const userLikedvideo = videos.find((item) => item._id === _id);
   const video = videos.find((item) => item._id === _id);
@@ -59,6 +66,16 @@ export const VideoCard = ({
   const watchlaterDeleteHandler = () => {
     deleteWatchlater(_id, token, dispatchWatchlater);
   };
+
+  const playlistHandler = (_id) => {
+    if (token) {
+      dispatchModal({ type:"MODAL-OPEN", payload:video });
+    } else {
+      navigate("/login");
+      toast.warning("Need Login to like this video");
+    }
+  };
+
   return (
     <>
       <section>
@@ -110,13 +127,15 @@ export const VideoCard = ({
                       onClick={watchLaterHandler}
                     />
                   )}
-                  <RiPlayListFill className="icons" />
+                  <RiPlayListFill
+                    className="icons"
+                    onClick={() => playlistHandler(_id)}
+                  />
                 </div>
               </>
             )}
           </div>
         </footer>
-        <div></div>
       </section>
     </>
   );

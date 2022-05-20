@@ -3,7 +3,12 @@ import { AiOutlineDelete, AiOutlineLike, AiFillLike } from "react-icons/ai";
 import { RiPlayListFill } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
 import { addtoLike, deletelikeVideo, deleteWatchlater } from "../../ApiCalls";
-import { useAuth, useLikeVideoContext, usewatchlater } from "../../context";
+import {
+  useAuth,
+  useLikeVideoContext,
+  useModal,
+  usewatchlater,
+} from "../../context";
 
 export const WatchlaterCard = ({
   title,
@@ -16,9 +21,12 @@ export const WatchlaterCard = ({
   const { dispatchWatchlater, watchlaterState } = usewatchlater();
   const { dispatchLikeVideo, likeVideoState } = useLikeVideoContext();
   const navigate = useNavigate();
+  const { dispatchModal } = useModal();
+
   const { likes } = likeVideoState;
   const { watchLater } = watchlaterState;
   const { token } = userDetailes;
+  const video = watchLater.find((item) => item._id === _id);
 
   const likevideo = watchLater.find((item) => item._id === _id);
 
@@ -62,7 +70,12 @@ export const WatchlaterCard = ({
                 onClick={addtoLikeHandler}
               />
             )}
-            <RiPlayListFill className="icons-like" />
+            <RiPlayListFill
+              className="icons-like"
+              onClick={() =>
+                dispatchModal({ type: "MODAL-OPEN", payload: video })
+              }
+            />
           </div>
         </div>
       </section>

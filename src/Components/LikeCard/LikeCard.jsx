@@ -8,7 +8,7 @@ import {
   deletelikeVideo,
   deleteWatchlater,
 } from "../../ApiCalls";
-import { useAuth, useLikeVideoContext, usewatchlater } from "../../context";
+import { useAuth, useLikeVideoContext, useModal, usewatchlater } from "../../context";
 import { useNavigate } from "react-router-dom";
 export const LikeCard = ({
   title,
@@ -16,20 +16,23 @@ export const LikeCard = ({
   thumbnail,
   channelName,
   _id,
+  
 }) => {
   const { userDetailes } = useAuth();
   const { dispatchLikeVideo, likeVideoState } = useLikeVideoContext();
   const navigate = useNavigate();
   const { dispatchWatchlater, watchlaterState } = usewatchlater();
+  const {dispatchModal}=useModal()
   const { likes } = likeVideoState;
   const { token } = userDetailes;
   const { watchLater } = watchlaterState;
 
   const watchLatervideo = likes.find((item) => item._id === _id);
+  const video = likes.find((item) => item._id === _id);
 
   const unlikeVideo = () => {
     deletelikeVideo(_id, token, dispatchLikeVideo);
-  };
+  };  
 
   const watchLaterHandlerInlike = () => {
     addTowatchlater(watchLatervideo, token, dispatchWatchlater);
@@ -38,7 +41,8 @@ export const LikeCard = ({
   const watchlaterDeleteHandlerInLike = () => {
     deleteWatchlater(_id, token, dispatchWatchlater);
   };
-
+  
+  
   return (
     <>
       <section className="video-card-section dis_flex">
@@ -69,7 +73,7 @@ export const LikeCard = ({
                 onClick={watchLaterHandlerInlike}
               />
             )}
-            <RiPlayListFill className="icons-like" />
+            <RiPlayListFill className="icons-like" onClick={()=>dispatchModal({ type:"MODAL-OPEN", payload:video })} />
           </div>
         </div>
       </section>
