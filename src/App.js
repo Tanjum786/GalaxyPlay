@@ -1,5 +1,4 @@
 import "./App.css";
-import {Navbar } from "./Components";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Route, Routes } from "react-router-dom";
@@ -31,7 +30,6 @@ function App() {
         draggable
         pauseOnHover
       />
-      <Navbar />
       <Routes>
         <Route path="/mock" element={<MockmanEs />} />
         <Route path="/" element={<Explore />} />

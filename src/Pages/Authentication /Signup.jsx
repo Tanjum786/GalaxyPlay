@@ -5,6 +5,7 @@ import "./Authentication.css";
 import { toast } from "react-toastify";
 import { usePassword } from "../../context/showpassword-context/ShowpasswordContext";
 import { useAuth } from "../../context/auth-context/AuthContext";
+import { Footer, Navbar } from "../../Components";
 
 export const Signup = () => {
   const { showpassword, ShowpasswordFun } = usePassword();
@@ -50,7 +51,8 @@ export const Signup = () => {
 
   return (
     <>
-      <div className="e_container">
+    <Navbar/>
+      <div className="main-explore e_container">
         <section className="e_login_signup_container dis_flex">
           <form>
             <div className="login_signup_container signup_container gap_s dis_flex">
@@ -187,6 +189,7 @@ export const Signup = () => {
           </form>
         </section>
       </div>
+      <Footer/>
     </>
   );
 };

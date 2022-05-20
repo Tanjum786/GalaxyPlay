@@ -7,6 +7,8 @@ import { useLikeVideoContext } from "./Liked-context/Likevideocontext";
 import { usewatchlater } from "./Watchlater-context/Watchlatercontext";
 import { HistorycontextProvider } from "./History-context/historycontext";
 import { useHistoryContext } from "./History-context/historycontext";
+import { CatergoryProvider } from "./CategoryFilter.jsx/Categoryfilter";
+import { useCategory } from "./CategoryFilter.jsx/Categoryfilter";
 
 export {
   AuthProvider,
@@ -17,5 +19,7 @@ export {
   useLikeVideoContext,
   usewatchlater,
   HistorycontextProvider,
-  useHistoryContext
+  useHistoryContext,
+  CatergoryProvider,
+  useCategory
 };

@@ -46,7 +46,7 @@ export const LikeCard = ({
           <img
             className="video-image"
             src={thumbnail}
-            alt="likedvideo-image"
+            alt={title.slice(0, 25)}
             onClick={() => navigate(`/explore/${_id}`)}
           />
           <img className="video-image" src={thumbnail} alt={title.slice(0,25)} />

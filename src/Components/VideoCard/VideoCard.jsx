@@ -65,7 +65,7 @@ export const VideoCard = ({
         <div className="video-image-container">
           <img
             src={thumbnail}
-            alt="thumbnail"
+            alt={title.slice(0.25)}
             onClick={() => navigate(`/explore/${_id}`)}
           />
           <img src={thumbnail} alt={title.slice(0.25)} />

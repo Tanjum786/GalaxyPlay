@@ -15,7 +15,7 @@ export const WatchlaterCard = ({
   const { userDetailes } = useAuth();
   const { dispatchWatchlater, watchlaterState } = usewatchlater();
   const { dispatchLikeVideo, likeVideoState } = useLikeVideoContext();
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   const { likes } = likeVideoState;
   const { watchLater } = watchlaterState;
   const { token } = userDetailes;
@@ -39,7 +39,7 @@ export const WatchlaterCard = ({
           <img
             className="video-image"
             src={thumbnail}
-            alt="likedvideo-image"
+            alt={title.slice(0, 25)}
             onClick={() => navigate(`/explore/${_id}`)}
           />
 

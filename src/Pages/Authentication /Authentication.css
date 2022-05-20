@@ -22,6 +22,9 @@
 
 }
 
+.login_btn{
+    width: 100%;
+}
 .new_account_link {
     position: absolute;
     bottom: 0rem;
@@ -73,7 +76,7 @@
     outline: none;
 }
 
-.btn_style {
+button.btn_style {
     font-size: 1.5rem;
     width: 100%;
 }
@@ -99,11 +102,11 @@
     font-weight: bold;
 }
 
-.guestLogin-btn{
+button.guestLogin-btn{
     background-color: var(--pureWhite-color);
     color: var(--black-color);
 }
-.guestLogin-btn:hover{
+button.guestLogin-btn:hover{
     background-color: var(--pureWhite-color);
 }
 

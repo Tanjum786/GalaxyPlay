@@ -3,7 +3,7 @@ import './Footer.css'
 
 export const Footer = () => {
   return (
-    <div>
+    <div className="main-footer dis_flex">
       <footer className="footer">
         <div className="footer-header dis_flex">
           <p>Made by Tanjum</p>
