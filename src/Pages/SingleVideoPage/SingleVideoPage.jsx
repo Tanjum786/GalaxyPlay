@@ -21,6 +21,7 @@ import {
   useModal,
   usewatchlater,
 } from "../../context";
+import { toast } from "react-toastify";
 
 export const SingleVideoPage = () => {
   const [Video, setvideo] = useState({});
@@ -66,6 +67,15 @@ export const SingleVideoPage = () => {
     addToHistory(Video, token, dispatchHistory);
   };
 
+  const playlistHandler=()=>{
+if (token){
+  dispatchModal({ type:"MODAL-OPEN", payload:Video })
+}
+else{
+  navigate("/login");
+  toast.warning("Needs to login to create playlist")
+}
+  }
   SinglevideoApi(videoId, setvideo);
 
   return (
@@ -109,7 +119,7 @@ export const SingleVideoPage = () => {
                   onClick={watchLaterHandler}
                 />
               )}
-              <RiPlayListFill className="singlepage-icons" onClick={()=>dispatchModal({ type:"MODAL-OPEN", payload:Video })}/>
+              <RiPlayListFill className="singlepage-icons" onClick={playlistHandler}/>
             </div>
           </div>
           <div className="discription-container dis_flex">
