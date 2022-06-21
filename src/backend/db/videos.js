@@ -41,11 +41,11 @@ export const videos = [
     videoLength: "6:42",
     views: "15M views",
     category: "Jubin Nautiyal",
-    thumbnail: "https://i3.ytimg.com/vi/sFVcKQUBY7M/maxresdefault.jpg",
+    thumbnail: "https://i3.ytimg.com/vi/TmRgK-pXH9c/maxresdefault.jpg",
     channelName: "Pooja Narwat",
     channelProfile:
       "https://yt3.ggpht.com/OeUF5wpZ2Q6SKXTv-sM9AyDEjxL1wdH2V9A2XE-4P-gG1OE6Rsj8c8d1bbIAdXd1Z0zBp61ERA=s88-c-k-c0x00ffffff-no-rj",
-    VideoId: "sFVcKQUBY7M",
+    VideoId: "TmRgK-pXH9c",
     discription:
       "In some ways, music is a lot like literature. It can be pleasing, enlightening, even life-changing. A great song, like a great book, affects the listener in unanticipated ways and resonates long after the music has ceased.",
   },

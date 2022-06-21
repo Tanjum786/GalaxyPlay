@@ -1,5 +1,6 @@
 .mainvideo-container {
   width: 100%;
+  position: relative;
 }
 
 .main-explore {
@@ -19,6 +20,10 @@
 }
 
 .chips-container {
+  position: sticky;
+  top: 9rem;
+  z-index: 3;
+  background-color: var(--body-balck-color);
   margin-left: 10rem;
   border-bottom: 2px solid var(--pureWhite-color);
   border-radius: 1rem;
