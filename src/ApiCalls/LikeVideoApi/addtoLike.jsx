@@ -1,5 +1,6 @@
 import axios from "axios";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
+
 
 const addtoLike = async (video, token, dispatchLikeVideo) => {
   try {

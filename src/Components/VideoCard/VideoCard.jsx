@@ -5,7 +5,6 @@ import { AiOutlineLike, AiFillLike } from "react-icons/ai";
 import { MdOutlineWatchLater, MdWatchLater } from "react-icons/md";
 import { RiPlayListFill } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 import {
   addtoLike,
   addTowatchlater,
@@ -18,6 +17,7 @@ import {
   useModal,
   usewatchlater,
 } from "../../context";
+import toast from "react-hot-toast";
 
 export const VideoCard = ({
   _id,

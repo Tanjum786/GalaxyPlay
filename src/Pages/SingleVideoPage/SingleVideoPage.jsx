@@ -21,7 +21,7 @@ import {
   useModal,
   usewatchlater,
 } from "../../context";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
 
 export const SingleVideoPage = () => {
   const [Video, setvideo] = useState({});
