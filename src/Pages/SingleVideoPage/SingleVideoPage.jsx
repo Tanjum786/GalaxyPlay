@@ -90,6 +90,7 @@ else{
               height="100%"
               url={`https://www.youtube.com/watch?v=${Video.VideoId}`}
               controls={true}
+              playing={true}
               onStart={addtohistoryHandler}
             />
           </section>
