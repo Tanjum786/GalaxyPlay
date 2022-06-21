@@ -11,7 +11,7 @@ import {
   deleteVideoFromPlaylist,
   deleteWatchlater,
 } from "../../ApiCalls";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
 export const PlaylistModal = () => {
   const { modalState, dispatchModal } = useModal();
   const { userDetailes } = useAuth();

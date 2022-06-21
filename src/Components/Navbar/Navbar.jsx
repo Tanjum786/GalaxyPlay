@@ -5,10 +5,10 @@ import { HiMenu } from "react-icons/hi";
 import { useState } from "react";
 import { IoMdCloseCircle } from "react-icons/io";
 import { HamburgerMenu } from "../Hamburger/HamburgerMenu";
-import { toast } from "react-toastify";
 import { FaUserCircle } from "react-icons/fa";
 import { useAuth } from "../../context/auth-context/AuthContext";
 import { useCategory } from "../../context";
+import toast from "react-hot-toast";
 
 export const Navbar = ({searchQuery, setsearch}) => {
   const [open, setopen] = useState(false);

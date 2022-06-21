@@ -1,5 +1,5 @@
 import axios from "axios";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
 
 export const Createplaylist = async (playlist, dispatchplaylist, token) => {
   const response = await axios.post(

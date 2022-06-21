@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import "./Authentication.css";
-import { toast } from "react-toastify";
 import { usePassword } from "../../context/showpassword-context/ShowpasswordContext";
 import { useAuth } from "../../context/auth-context/AuthContext";
 import { Footer, Navbar } from "../../Components";
