@@ -11,51 +11,77 @@ export const SideBar = () => {
       <aside className="side-menu">
         <ul className="sidebar-container">
           <li className="sidebar-list">
-            <NavLink to="/" className={({isActive})=>(isActive?"active-menu":"notactive-menu")}>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive ? "active-menu" : "notactive-menu"
+              }
+            >
               <i className="icon-sidebar fa-solid fa-compass"> </i>
               <p className="title-sidebar">Explore</p>
             </NavLink>
           </li>
           <li className="sidebar-list">
-            <NavLink to="/likevideo" className={({isActive})=>(isActive?"active-menu" :"notactive-menu")}>
+            <NavLink
+              to="/likevideo"
+              className={({ isActive }) =>
+                isActive ? "active-menu" : "notactive-menu"
+              }
+            >
               <i className="icon-sidebar fa-solid fa-thumbs-up "></i>{" "}
               <p className="title-sidebar">Liked</p>
             </NavLink>
           </li>
           <li className="sidebar-list">
-            <NavLink to="/playlist" className={({isActive})=>(isActive?"active-menu":"notactive-menu")}>
+            <NavLink
+              to="/playlist"
+              className={({ isActive }) =>
+                isActive ? "active-menu" : "notactive-menu"
+              }
+            >
               <i className="icon-sidebar fa-solid fa-folder-plus"></i>
               <p className="title-sidebar">Playlist</p>
             </NavLink>
           </li>
           <li className="sidebar-list">
-            <NavLink to="/wacthlater" className={({isActive})=>(isActive?"active-menu":"notactive-menu")}>
+            <NavLink
+              to="/wacthlater"
+              className={({ isActive }) =>
+                isActive ? "active-menu" : "notactive-menu"
+              }
+            >
               <i className="icon-sidebar fa-solid fa-clock"></i>
               <p className="title-sidebar">WatchLater</p>
             </NavLink>
           </li>
           <li className="sidebar-list">
-            <NavLink to="/history" className={({isActive})=>isActive?"active-menu":"notactive-menu"}>
+            <NavLink
+              to="/history"
+              className={({ isActive }) =>
+                isActive ? "active-menu" : "notactive-menu"
+              }
+            >
               <i className="icon-sidebar fa-solid fa-clock-rotate-left"></i>
               <p className="title-sidebar">History</p>
             </NavLink>
           </li>
           {token && user ? (
             <li className="sidebar-list">
-              <i className="icon-sidebar fa-solid fa-circle-user"></i>
-
-              <p className="title-sidebar">{user.firstName}</p>
+              <NavLink to="/profilepage" className="notactive-menu">
+                <i className="icon-sidebar fa-solid fa-circle-user"></i>
+                <p className="title-sidebar">{user.firstName}</p>
+              </NavLink>
             </li>
           ) : (
-            <li className="sidebar-list">
-              <i className="icon-sidebar fa-solid fa-circle-user"></i>
-
-              <p className="title-sidebar">Profile</p>
-            </li>
+            <NavLink to="/login" className="notactive-menu">
+              <li className="sidebar-list">
+                <i className="icon-sidebar fa-solid fa-circle-user"></i>
+                <p className="title-sidebar">Profile</p>
+              </li>
+            </NavLink>
           )}
         </ul>
       </aside>
     </>
   );
 };
-
