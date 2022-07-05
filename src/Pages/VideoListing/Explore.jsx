@@ -9,10 +9,12 @@ export const Explore = () => {
   const [videodata, setVideodata] = useState([]);
   const [categories, setCategories] = useState([]);
   const [searchQuery, setsearch] = useState("");
+  const [loading, setloading] = useState(false);
+
   const { categoryState, dispatchCategory } = useCategory();
   const { category } = categoryState;
 
-  useEffect(() => fetchData(setVideodata), []);
+  useEffect(() => fetchData(setVideodata, setloading), []);
   useEffect(() => getcategorydata(setCategories), []);
 
   const categoryfilter = filterdata(category, videodata);
@@ -27,15 +29,19 @@ export const Explore = () => {
           <nav className="chips-container">
             <div className="chips-list dis_flex">
               <button
-                className={`btn-singer-name ${category===""?"Isactive":""}` }
+                className={`btn-singer-name ${
+                  category === "" ? "Isactive" : ""
+                }`}
                 onClick={() => dispatchCategory({ type: "CLEAR_CATEGORY" })}
               >
                 All
               </button>
               {categories.map((cate) => (
                 <button
-                key={cate._id}
-                className={`btn-singer-name ${category==cate.categoryName?"Isactive":""}` }
+                  key={cate._id}
+                  className={`btn-singer-name ${
+                    category == cate.categoryName ? "Isactive" : ""
+                  }`}
                   onClick={() =>
                     dispatchCategory({
                       type: "SELECT_CATEGORY",
@@ -49,18 +55,18 @@ export const Explore = () => {
             </div>
           </nav>
           <div className="video-card-conatiner dis_flex">
-            {searchFiltervideo.length !== 0 ? (
+            {loading ? (
+              <h1 className="warning-title">Loading....</h1>
+            ) : searchFiltervideo.length !== 0 ? (
               searchFiltervideo.map((video) => {
                 return (
-                  <VideoCard
-                    key={video._id}
-                    {...video}
-                    videos={videodata}
-                  />
+                  <VideoCard key={video._id} {...video} videos={videodata} />
                 );
               })
-            ) : (
+            ) : !loading ? (
               <h1 className="warning-title">No such videos exist</h1>
+            ) : (
+              ""
             )}
           </div>
         </div>
