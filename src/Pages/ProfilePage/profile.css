@@ -1,0 +1,28 @@
+.profile-container{
+    height: 100vh;
+}
+.profile-detial{
+    border: 1px solid var(--pureWhite-color);
+    width: 40rem;
+    transform: translate(-50%,-50%);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+
+}
+.title-profile{
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--secondary-red-color);
+}
+.title-profile-heading{
+    padding: 1rem;
+    text-decoration: underline;    
+}
+.userdetail{
+    padding: 0.5rem 1.5rem;
+    font-size: 1.5rem;
+}
+.profile-logout-btn{
+    margin: 1.5rem;
+}

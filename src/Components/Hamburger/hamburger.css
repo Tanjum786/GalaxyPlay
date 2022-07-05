@@ -5,6 +5,7 @@
     height: 100vh;
     list-style: none;
     padding-top: 3rem;
+    /* display: none; */
     background-color: var(--primary-balck-color);
 }
 
@@ -38,12 +39,14 @@
 @media screen and (max-width:768px) {
     .hamburger-sidebar-container {
         top: 9rem;
+        display: block;
     }
 }
 
 @media screen and (max-width:425px) {
     .hamburger-sidebar-container {
         top: 8rem;
+        display: block;
     }
 }
 

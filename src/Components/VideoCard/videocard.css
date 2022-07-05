@@ -62,3 +62,25 @@
   background-color: var(--primary-balck-color);
   border-radius: 1rem;
 }
+
+@media screen and (max-width:768px) {
+  
+  .video-title{
+    width: 28rem;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width:425px) {
+  .video-image-container {
+    width: 45rem;
+  }
+  .video-length{
+    top: 20rem;
+  }
+  .video-title{
+    width: 35rem;
+  }
+
+}
+

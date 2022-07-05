@@ -21,8 +21,8 @@
 
 .chips-container {
   position: sticky;
+  z-index: 2;
   top: 9rem;
-  z-index: 3;
   background-color: var(--body-balck-color);
   margin-left: 10rem;
   border-bottom: 2px solid var(--pureWhite-color);
@@ -55,4 +55,17 @@
   color: var(--primary-balck-color);
   transition: all 0.7s ease-in-out;
 
+}
+
+
+@media screen and (max-width:768px) {
+  .video-card-conatiner{
+    margin-left: 0rem;
+    justify-content: space-evenly;
+
+  }
+   .chips-container{
+    margin-left: 1rem;
+    z-index: 1;
+   }
 }

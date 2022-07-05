@@ -70,8 +70,10 @@
   .video-card-length {
     bottom: 3rem;
   }
-
   .icons-like {
     margin-top: 1rem;
+  }
+  .video-card-section{
+    margin-left: 1rem;
   }
 }
