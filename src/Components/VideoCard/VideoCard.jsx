@@ -36,7 +36,7 @@ export const VideoCard = ({
   const { userDetailes } = useAuth();
   const { dispatchModal } = useModal();
 
-  const { likes } = likeVideoState;   
+  const { likes } = likeVideoState;
   const { token } = userDetailes;
   const { watchLater } = watchlaterState;
 
@@ -45,6 +45,7 @@ export const VideoCard = ({
   const likeHandler = () => {
     if (token) {
       addtoLike(userLikedvideo, token, dispatchLikeVideo);
+      setIconopen(!iconOpen);
     } else {
       navigate("/login");
       toast.warning("Need Login to like this video");
@@ -53,11 +54,13 @@ export const VideoCard = ({
 
   const deleteHandler = () => {
     deletelikeVideo(_id, token, dispatchLikeVideo);
+    setIconopen(!iconOpen);
   };
 
   const watchLaterHandler = (_id) => {
     if (token) {
       addTowatchlater(video, token, dispatchWatchlater);
+      setIconopen(!iconOpen);
     } else {
       navigate("/login");
       toast.warning("Need Login to like this video");
@@ -65,11 +68,13 @@ export const VideoCard = ({
   };
   const watchlaterDeleteHandler = () => {
     deleteWatchlater(_id, token, dispatchWatchlater);
+    setIconopen(!iconOpen);
   };
 
   const playlistHandler = (_id) => {
     if (token) {
-      dispatchModal({ type:"MODAL-OPEN", payload:video });
+      dispatchModal({ type: "MODAL-OPEN", payload: video });
+      setIconopen(!iconOpen);
     } else {
       navigate("/login");
       toast.warning("Need Login to like this video");

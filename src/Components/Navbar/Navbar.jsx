@@ -77,6 +77,7 @@ export const Navbar = ({ searchQuery, setsearch }) => {
               name="search"
               value={searchQuery}
               onChange={searchInput}
+              onClick={()=>navigate("/")}
             />
             <i className="fa fa-search search-icon"></i>
           </div>
