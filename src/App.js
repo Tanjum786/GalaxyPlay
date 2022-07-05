@@ -8,6 +8,7 @@ import {
   LikeVideo,
   Login,
   PlaylistVideo,
+  Profilepage,
   Signup,
   SingleVideocardPage,
   SingleVideoPage,
@@ -23,7 +24,13 @@ function App() {
   return (
     <div className="App">
       {modalStatus ? <PlaylistModal /> : null}
-      <Toaster position="bottom-center" reverseOrder={false} />
+      <Toaster position="topconst {
+    userDetailes,
+    setuserDetailes,
+    authState: { isSubmit },
+    Authdispatch,
+  } = useAuth();
+  const { token, user } = userDetailes;-center" reverseOrder={false} />
 
       <Routes>
         <Route path="/mock" element={<MockmanEs />} />
@@ -47,6 +54,9 @@ function App() {
             </RequireAuth>
           }
         />
+        <Route path="/profilepage" element={<RequireAuth>
+          <Profilepage/>
+        </RequireAuth>} />
         <Route
           path="/playlist"
           element={
